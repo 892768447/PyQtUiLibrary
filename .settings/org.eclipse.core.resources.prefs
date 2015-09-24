@@ -1,9 +1,12 @@
 eclipse.preferences.version=1
+encoding//uilib/Animation.py=utf-8
 encoding//uilib/Application.py=utf-8
 encoding//uilib/widgets/LineEdit.py=utf-8
+encoding//uilib/widgets/MetroProgressBar.py=utf-8
 encoding//uilib/widgets/PageWidget.py=utf-8
 encoding//uilib/widgets/PushButton.py=utf-8
 encoding//uilib/widgets/base.py=utf-8
+encoding/Test_MetroProgressBar.py=utf-8
 encoding/Test_QCheckBox_QRadioButton.py=utf-8
 encoding/Test_QComboBox.py=utf-8
 encoding/Test_QLineEdit.py=utf-8

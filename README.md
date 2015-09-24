@@ -11,3 +11,6 @@
 #
 [Test_QScrollBar_QProgressBar_QSlider-样式](https://github.com/892768447/PyQtUiLibrary/blob/master/Screenshot/Test_QScrollBar_QProgressBar_QSlider.jpg "Test_QScrollBar_QProgressBar_QSlider-样式")
 ![4](https://github.com/892768447/PyQtUiLibrary/blob/master/Screenshot/Test_QScrollBar_QProgressBar_QSlider.jpg)
+#
+[MetroProgressBar-进度条](https://github.com/892768447/PyQtUiLibrary/blob/master/Screenshot/Test_MetroProgressBar.gif "MetroProgressBar-进度条")
+![5](https://github.com/892768447/PyQtUiLibrary/blob/master/Screenshot/Test_MetroProgressBar.gif)
