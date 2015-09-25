@@ -7,9 +7,9 @@ Created on 2015年9月24日
 @email: 892768447@qq.com
 @description: 
 '''
-from PyQt5.QtCore import QSize, QRect, QPauseAnimation, QPropertyAnimation, \
-    QPoint, QParallelAnimationGroup, QSequentialAnimationGroup
+from PyQt5.QtCore import QSize, QRect
 from PyQt5.QtWidgets import QWidget
+from uilib.animations.MpbAnimation import MpbAnimation
 
 
 __Author__ = "By: Irony.\"[讽刺]\nQQ: 892768447\nEmail: 892768447@qq.com"
@@ -71,7 +71,7 @@ class MetroProgressBar(QWidget, Ui_MetroProgressBar):
 
     def stop(self):
         for animation in self.animations:
-            animation[3].stop()
+            animation.stop()
         print("anll animation stop")
 
     def resizeEvent(self, event):
@@ -87,74 +87,10 @@ class MetroProgressBar(QWidget, Ui_MetroProgressBar):
             self._isFirst = False
             print("first initAnimation")
             for index in range(5):
-                self.createAnimation(index)
+                animation = MpbAnimation(self, self.childWidgets.get(index), index)
+                self.animations.append(animation)
+                animation.start()
         else:    # 修改宽度值
             print("changed initAnimation")
-            self.updateAnimation()
-
-    def updateAnimation(self):
-        '''更新动画'''
-        for (MoveAnimation2, MoveAnimation3, MoveAnimation5, SequentialAnimation) in self.animations:
-            SequentialAnimation.pause()    # 暂停
-            MoveAnimation2.setEndValue(QPoint(self.width() / 4.0, 0))
-            MoveAnimation3.setEndValue(QPoint((self.width() / 4.0) * 3.0, 0))
-            MoveAnimation5.setEndValue(QPoint(self.width(), 0))
-            SequentialAnimation.resume()    # 恢复
-
-    def createAnimation(self, index):
-        '''创建动画'''
-        target = self.childWidgets.get(index)
-        # 动画一(暂停)
-        PauseAnimation1 = QPauseAnimation(target)
-        PauseAnimation1.setDuration(150 * index)
-
-        # 动画二(并行动画组)
-        MoveAnimation1 = QPropertyAnimation(target, b"windowOpacity")
-        MoveAnimation1.setDuration(400)
-        MoveAnimation1.setStartValue(0)
-        MoveAnimation1.setEndValue(1)
-
-        MoveAnimation2 = QPropertyAnimation(target, b"pos")
-        MoveAnimation2.setDuration(400)
-        MoveAnimation2.setStartValue(QPoint(0, 0))
-        MoveAnimation2.setEndValue(QPoint(self.width() / 4.0, 0))
-
-        ParallelAnimation1 = QParallelAnimationGroup()
-        ParallelAnimation1.addAnimation(MoveAnimation1)
-        ParallelAnimation1.addAnimation(MoveAnimation2)
-
-        # 动画三
-        MoveAnimation3 = QPropertyAnimation(target, b"pos")
-        MoveAnimation3.setDuration(2000)
-        MoveAnimation3.setEndValue(QPoint((self.width() / 4.0) * 3.0, 0))
-
-        # 动画四(并行动画组)
-        MoveAnimation4 = QPropertyAnimation(target, b"windowOpacity")
-        MoveAnimation4.setDuration(400)
-        MoveAnimation4.setStartValue(1)
-        MoveAnimation4.setEndValue(0)
-
-        MoveAnimation5 = QPropertyAnimation(target, b"pos")
-        MoveAnimation5.setDuration(400)
-        MoveAnimation5.setEndValue(QPoint(self.width(), 0))
-
-        ParallelAnimation2 = QParallelAnimationGroup()
-        ParallelAnimation2.addAnimation(MoveAnimation4)
-        ParallelAnimation2.addAnimation(MoveAnimation5)
-
-        # 动画五(暂停)
-        PauseAnimation2 = QPauseAnimation(target)
-        PauseAnimation2.setDuration(150 * (5 - index - 1))
-
-        # 串行动画组
-        SequentialAnimation = QSequentialAnimationGroup()
-        SequentialAnimation.setLoopCount(-1)    # 无限循环
-        SequentialAnimation.addAnimation(PauseAnimation1)
-        SequentialAnimation.addAnimation(ParallelAnimation1)
-        SequentialAnimation.addAnimation(MoveAnimation3)
-        SequentialAnimation.addAnimation(ParallelAnimation2)
-        SequentialAnimation.addAnimation(PauseAnimation2)
-
-        # 把需要修改的动画放到数组中
-        self.animations.append((MoveAnimation2, MoveAnimation3, MoveAnimation5, SequentialAnimation))
-        SequentialAnimation.start()
+            for animation in self.animations:
+                animation.updateAnimation()

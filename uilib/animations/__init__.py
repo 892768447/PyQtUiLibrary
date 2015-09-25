@@ -5,7 +5,7 @@
 Created on 2015年9月24日
 @author: Irony."[讽刺]
 @email: 892768447@qq.com
-@description: uilib
+@description: animations 动画
 '''
 
 __Author__ = "By: Irony.\"[讽刺]\nQQ: 892768447\nEmail: 892768447@qq.com"
