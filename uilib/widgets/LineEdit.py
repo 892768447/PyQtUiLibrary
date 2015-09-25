@@ -10,14 +10,12 @@ Created on 2015年9月3日
 from PyQt5.QtCore import pyqtSignal, Qt
 from PyQt5.QtWidgets import QLineEdit
 
-from uilib.widgets.base import Base
-
 
 __Author__ = "By: Irony.\"[讽刺]\nQQ: 892768447\nEmail: 892768447@qq.com"
 __Copyright__ = "Copyright (c) 2015 Irony.\"[讽刺]"
 __Version__ = "Version 1.0"
 
-class LineEdit(QLineEdit, Base):
+class LineEdit(QLineEdit):
 
     SEARCH = pyqtSignal(str)    # 搜索信号
 
