@@ -27,6 +27,11 @@
 ![5](https://github.com/892768447/PyQtUiLibrary/blob/master/Screenshot/Test_MetroProgressBar.gif)
 
 #
+[MetroProgressCircleBar-进度条](https://github.com/892768447/PyQtUiLibrary/blob/master/Screenshot/Test_MetroProgressCircleBar.gif "MetroProgressCircleBar-进度条")
+#
+![6](https://github.com/892768447/PyQtUiLibrary/blob/master/Screenshot/Test_MetroProgressCircleBar.gif)
+
+#
 [Animation-动画](https://github.com/892768447/PyQtUiLibrary/blob/master/Screenshot/Test_Animation.gif "Animation-动画")
 #
-![6](https://github.com/892768447/PyQtUiLibrary/blob/master/Screenshot/Test_Animation.gif)
+![7](https://github.com/892768447/PyQtUiLibrary/blob/master/Screenshot/Test_Animation.gif)
