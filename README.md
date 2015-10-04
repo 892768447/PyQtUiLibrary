@@ -1,37 +1,20 @@
-#PyQtUiLibrary(需要Python3.4和PyQt5)
-###[QQ Group(QQ群-刚刚成立)：PyQt 334386871](http://shang.qq.com/wpa/qunwpa?idkey=32c97f52f285586aa17f8216de36a02ff2dc4f83d5e988c0bacb8227a27ed6f3 "PyQt 334386871")
+# QQ: [892768447](tencent://message/?uin=892768447)
+# PyQtUiLibrary(需要Python3.4和PyQt5)
+较之前的版本，本次主要是取消qss文件，完全用模块实现。
 
-#
-[QPushButton-按钮样式](https://github.com/892768447/PyQtUiLibrary/blob/master/Screenshot/Test_QPushButton.jpg "QPushButton-按钮样式")
-#
-![1](https://github.com/892768447/PyQtUiLibrary/blob/master/Screenshot/Test_QPushButton.jpg)
+## ImageWidget(图片控件)-[Test_ImageWidget.py](https://github.com/892768447/PyQtUiLibrary/blob/master/test/Test_ImageWidget.py)
+- BaseImageWidget(方形图片控件)
+- RoundImageWidget(圆角图片控件)
+- CircleImageWidget(圆形图片控件)
+- OverlayImageWidget(动态边框图片控件)
+  <img src="https://github.com/892768447/PyQtUiLibrary/blob/master/screenshot/Test_ImageWidget.gif" width="300" />
 
-#
-[QLineEdit-输入框样式](https://github.com/892768447/PyQtUiLibrary/blob/master/Screenshot/Test_QLineEdit.jpg "QLineEdit-输入框样式")
-#
-![2](https://github.com/892768447/PyQtUiLibrary/blob/master/Screenshot/Test_QLineEdit.jpg)
-
-#
-[QPageWidget-分页控件](https://github.com/892768447/PyQtUiLibrary/blob/master/Screenshot/Test_QPageWidget.jpg "QPageWidget-分页控件")
-#
-![3](https://github.com/892768447/PyQtUiLibrary/blob/master/Screenshot/Test_QPageWidget.jpg)
-
-#
-[Test_QScrollBar_QProgressBar_QSlider-样式](https://github.com/892768447/PyQtUiLibrary/blob/master/Screenshot/Test_QScrollBar_QProgressBar_QSlider.jpg "Test_QScrollBar_QProgressBar_QSlider-样式")
-#
-![4](https://github.com/892768447/PyQtUiLibrary/blob/master/Screenshot/Test_QScrollBar_QProgressBar_QSlider.jpg)
-
-#
-[MetroProgressBar-进度条](https://github.com/892768447/PyQtUiLibrary/blob/master/Screenshot/Test_MetroProgressBar.gif "MetroProgressBar-进度条")
-#
-![5](https://github.com/892768447/PyQtUiLibrary/blob/master/Screenshot/Test_MetroProgressBar.gif)
-
-#
-[MetroProgressCircleBar-进度条](https://github.com/892768447/PyQtUiLibrary/blob/master/Screenshot/Test_MetroProgressCircleBar.gif "MetroProgressCircleBar-进度条")
-#
-![6](https://github.com/892768447/PyQtUiLibrary/blob/master/Screenshot/Test_MetroProgressCircleBar.gif)
-
-#
-[Animation-动画](https://github.com/892768447/PyQtUiLibrary/blob/master/Screenshot/Test_Animation.gif "Animation-动画")
-#
-![7](https://github.com/892768447/PyQtUiLibrary/blob/master/Screenshot/Test_Animation.gif)
+## PushButton(按钮)-[Test_ImageWidget.py](https://github.com/892768447/PyQtUiLibrary/blob/master/test/Test_PushButton.py)
+- DefaultStyle(Default样式)
+- PrimaryStyle(Primary样式)
+- WarningStyle(Warning样式)
+- DangerStyle(Danger样式)
+- SuccessStyle(Success样式)
+- InverseStyle(Inverse样式)
+- InfoStyle(Info样式)
+  <img src="https://github.com/892768447/PyQtUiLibrary/blob/master/screenshot/Test_QPushButton.jpg" width="300" />
