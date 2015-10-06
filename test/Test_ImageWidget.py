@@ -7,6 +7,8 @@ Created on 2015年10月2日
 @email: 892768447@qq.com
 @description: 
 '''
+from __future__ import unicode_literals
+# 解决2.x到3.x的字符串问题
 from os.path import dirname, abspath
 import sys
 
@@ -14,13 +16,16 @@ import sys
 sys.path.insert(0, dirname(dirname(abspath(sys.argv[0]))))
 sys.path.insert(0, dirname(dirname(abspath(__file__))))
 
-from PyQt5.QtWidgets import QWidget, QHBoxLayout, QVBoxLayout, QApplication
-
+from uilib.utils import QT5
 from uilib.widgets.images.BaseImageWidget import BaseImageWidget
 from uilib.widgets.images.CircleImageWidget import CircleImageWidget
 from uilib.widgets.images.OverlayImageWidget import OverlayImageWidget
 from uilib.widgets.images.RoundImageWidget import RoundImageWidget
 
+if QT5():
+    from PyQt5.QtWidgets import QWidget, QHBoxLayout, QVBoxLayout, QApplication    # @UnresolvedImport @UnusedImport
+else:
+    from PyQt4.QtGui import QWidget, QVBoxLayout, QHBoxLayout, QApplication    # @Reimport @UnresolvedImport
 
 __Author__ = "By: Irony.\"[讽刺]\nQQ: 892768447\nEmail: 892768447@qq.com"
 __Copyright__ = "Copyright (c) 2015 Irony.\"[讽刺]"
@@ -33,7 +38,7 @@ class TestImageWidget(QWidget):
         self.resize(600, 600)
 
         # Normal Style
-        imageWidget1 = BaseImageWidget(self, "../images/1.jpg")
+        imageWidget1 = BaseImageWidget(self, "../images/3.jpg")
         imageWidget1.setContent("图片1标题", "图片1的详细内容", titleColor = "red", textColor = "white")
         imageWidget1.setAlphaColorStr("#000000", 100)
         imageWidget1.setAutoHideText(True)    # 自动隐藏

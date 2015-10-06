@@ -7,16 +7,19 @@ Created on 2015年10月2日
 @email: 892768447@qq.com
 @description: 
 '''
-from PyQt5.QtGui import QRegion
 
 from uilib.widgets.images.BaseImageWidget import BaseImageWidget
-
+from PyQt5.QtGui import QRegion    # @UnresolvedImport @UnusedImport
 
 __Author__ = "By: Irony.\"[讽刺]\nQQ: 892768447\nEmail: 892768447@qq.com"
 __Copyright__ = "Copyright (c) 2015 Irony.\"[讽刺]"
 __Version__ = "Version 1.0"
 
 class CircleImageWidget(BaseImageWidget):
+
+#     def __init__(self, parent = None, path = None):
+#         super(CircleImageWidget, self).__init__(None)
+#         self.setObjectName("CircleImageWidget")
 
     def enterEvent(self, event):
         # 顶部

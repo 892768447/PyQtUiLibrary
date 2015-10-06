@@ -20,6 +20,7 @@ class OverlayImageWidget(BaseImageWidget):
 
     def __init__(self, parent = None, path = None):
         super(OverlayImageWidget, self).__init__(parent, path)
+        self.setObjectName("OverlayImageWidget")
         self._animation = OverlayImageAnimation(self._borderWidget, self)
 
     def enterEvent(self, event):

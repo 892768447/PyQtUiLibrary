@@ -5,18 +5,23 @@
 Created on 2015年10月4日
 @author: Irony."[讽刺]
 @email: 892768447@qq.com
-@description: 
+@description: TestPushButton
 '''
+from __future__ import unicode_literals
+# 解决2.x到3.x的字符串问题
 from os.path import dirname, abspath
 import sys
-
 # 父级目录
 sys.path.insert(0, dirname(dirname(abspath(sys.argv[0]))))
 sys.path.insert(0, dirname(dirname(abspath(__file__))))
 
-from PyQt5.QtWidgets import QWidget, QApplication, QVBoxLayout
-
+from uilib.utils import PY3, QT5
 from uilib.widgets.PushButton import PushButton
+
+if PY3() and QT5():
+    from PyQt5.QtWidgets import QWidget, QApplication, QVBoxLayout    # @UnresolvedImport @UnusedImport
+else:
+    from PyQt4.QtGui import QWidget, QVBoxLayout, QApplication    # @Reimport @UnresolvedImport
 
 
 __Author__ = "By: Irony.\"[讽刺]\nQQ: 892768447\nEmail: 892768447@qq.com"

@@ -7,10 +7,15 @@ Created on 2015年10月4日
 @email: 892768447@qq.com
 @description: 
 '''
-from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import QPushButton
 
-from uilib.utils import SELF
+from uilib.utils import SELF, PY3
+
+
+if PY3():
+    from PyQt5.QtGui import QIcon    # @UnresolvedImport @UnusedImport
+    from PyQt5.QtWidgets import QPushButton    # @UnresolvedImport @UnusedImport
+else:
+    from PyQt4.QtGui import QPushButton, QIcon    # @UnresolvedImport @Reimport
 
 
 __Author__ = "By: Irony.\"[讽刺]\nQQ: 892768447\nEmail: 892768447@qq.com"
@@ -27,14 +32,14 @@ class PushButton(QPushButton):
             min-width: %(min_width)s;
             min-height: %(min_height)s;
         }
-        QPushButton[%(property)s="true"] {
+        QPushButton[%(style)s="true"] {
             background-color: %(background_color)s;
         }
-        QPushButton[%(property)s="true"]:hover {
+        QPushButton[%(style)s="true"]:hover {
             border-color: %(hover_border_color)s;
             background-color: %(hover_background_color)s;
         }
-        QPushButton[%(property)s="true"]:pressed {
+        QPushButton[%(style)s="true"]:pressed {
             border-color: %(pressed_border_color)s;
             background-color: %(pressed_background_color)s;
         }
@@ -79,15 +84,78 @@ class PushButton(QPushButton):
             self.setDefaultStyle(True)
             self.updateStyle(self.DEFAULT_STYLE)
 
-    def updateStyle(self, _property):
+    def updateStyle(self, style):
         '''更新样式'''
-        self.setStyleSheet(self.STYLE % {"property":_property,
+        self.setStyleSheet(self.STYLE % {"style":style,
             "font_size":self.font_size, "border_radius":self.border_radius,
             "text_color":self.text_color, "min_width":self.min_width,
             "min_height":self.min_height, "background_color":self.background_color,
             "hover_border_color":self.hover_border_color, "hover_background_color":self.hover_background_color,
             "pressed_border_color":self.pressed_border_color, "pressed_background_color":self.pressed_background_color
         })
+
+    @SELF
+    def setDefaultStyle(self, value = True):
+        self.setProperty(self.DEFAULT_STYLE, value)
+        self.setBackgroundColor("#bdc3c7")
+        self.setHoverBorderColor("#cacfd2")
+        self.setHoverBackgroundColor("#cacfd2")
+        self.setPressedBorderColor("#a1a6a9")
+        self.setPressedBackgroundColor("#a1a6a9")
+
+    @SELF
+    def setPrimaryStyle(self, value = True):
+        self.setProperty(self.PRIMARY_STYLE, value)
+        self.setBackgroundColor("#1abc9c")
+        self.setHoverBorderColor("#48c9b0")
+        self.setHoverBackgroundColor("#48c9b0")
+        self.setPressedBorderColor("#16a085")
+        self.setPressedBackgroundColor("#16a085")
+
+    @SELF
+    def setWarningStyle(self, value = True):
+        self.setProperty(self.WARNING_STYLE, value)
+        self.setBackgroundColor("#f1c40f")
+        self.setHoverBorderColor("#f4d313")
+        self.setHoverBackgroundColor("#f4d313")
+        self.setPressedBorderColor("#cda70d")
+        self.setPressedBackgroundColor("#cda70d")
+
+    @SELF
+    def setDangerStyle(self, value = True):
+        self.setProperty(self.DANGER_STYLE, value)
+        self.setBackgroundColor("#e74c3c")
+        self.setHoverBorderColor("#ec7063")
+        self.setHoverBackgroundColor("#ec7063")
+        self.setPressedBorderColor("#c44133")
+        self.setPressedBackgroundColor("#c44133")
+
+    @SELF
+    def setSuccessStyle(self, value = True):
+        self.setProperty(self.SUCCESS_STYLE, value)
+        self.setBackgroundColor("#2ecc71")
+        self.setHoverBorderColor("#58d68d")
+        self.setHoverBackgroundColor("#58d68d")
+        self.setPressedBorderColor("#27ad60")
+        self.setPressedBackgroundColor("#27ad60")
+
+    @SELF
+    def setInverseStyle(self, value = True):
+        self.setProperty(self.INVERSE_STYLE, value)
+        self.setBackgroundColor("#34495e")
+        self.setHoverBorderColor("#415b76")
+        self.setHoverBackgroundColor("#415b76")
+        self.setPressedBorderColor("#2c3e50")
+        self.setPressedBackgroundColor("#2c3e50")
+
+    @SELF
+    def setInfoStyle(self, value = True):
+        self.setProperty(self.INFO_STYLE, value)
+        self.setBackgroundColor("#3498db")
+        self.setHoverBorderColor("#5dade2")
+        self.setHoverBackgroundColor("#5dade2")
+        self.setPressedBorderColor("#2c81ba")
+        self.setPressedBackgroundColor("#2c81ba")
 
     def getFontSize(self):
         return self.font_size
@@ -179,66 +247,3 @@ class PushButton(QPushButton):
     @SELF
     def setPressedBackgroundColor(self, value):
         self.pressed_background_color = value
-
-    @SELF
-    def setDefaultStyle(self, value = True):
-        self.setProperty(self.DEFAULT_STYLE, value)
-        self.setBackgroundColor("#bdc3c7")
-        self.setHoverBorderColor("#cacfd2")
-        self.setHoverBackgroundColor("#cacfd2")
-        self.setPressedBorderColor("#a1a6a9")
-        self.setPressedBackgroundColor("#a1a6a9")
-
-    @SELF
-    def setPrimaryStyle(self, value = True):
-        self.setProperty(self.PRIMARY_STYLE, value)
-        self.setBackgroundColor("#1abc9c")
-        self.setHoverBorderColor("#48c9b0")
-        self.setHoverBackgroundColor("#48c9b0")
-        self.setPressedBorderColor("#16a085")
-        self.setPressedBackgroundColor("#16a085")
-
-    @SELF
-    def setWarningStyle(self, value = True):
-        self.setProperty(self.WARNING_STYLE, value)
-        self.setBackgroundColor("#f1c40f")
-        self.setHoverBorderColor("#f4d313")
-        self.setHoverBackgroundColor("#f4d313")
-        self.setPressedBorderColor("#cda70d")
-        self.setPressedBackgroundColor("#cda70d")
-
-    @SELF
-    def setDangerStyle(self, value = True):
-        self.setProperty(self.DANGER_STYLE, value)
-        self.setBackgroundColor("#e74c3c")
-        self.setHoverBorderColor("#ec7063")
-        self.setHoverBackgroundColor("#ec7063")
-        self.setPressedBorderColor("#c44133")
-        self.setPressedBackgroundColor("#c44133")
-
-    @SELF
-    def setSuccessStyle(self, value = True):
-        self.setProperty(self.SUCCESS_STYLE, value)
-        self.setBackgroundColor("#2ecc71")
-        self.setHoverBorderColor("#58d68d")
-        self.setHoverBackgroundColor("#58d68d")
-        self.setPressedBorderColor("#27ad60")
-        self.setPressedBackgroundColor("#27ad60")
-
-    @SELF
-    def setInverseStyle(self, value = True):
-        self.setProperty(self.INVERSE_STYLE, value)
-        self.setBackgroundColor("#34495e")
-        self.setHoverBorderColor("#415b76")
-        self.setHoverBackgroundColor("#415b76")
-        self.setPressedBorderColor("#2c3e50")
-        self.setPressedBackgroundColor("#2c3e50")
-
-    @SELF
-    def setInfoStyle(self, value = True):
-        self.setProperty(self.INFO_STYLE, value)
-        self.setBackgroundColor("#3498db")
-        self.setHoverBorderColor("#5dade2")
-        self.setHoverBackgroundColor("#5dade2")
-        self.setPressedBorderColor("#2c81ba")
-        self.setPressedBackgroundColor("#2c81ba")

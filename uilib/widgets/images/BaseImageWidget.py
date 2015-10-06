@@ -7,11 +7,17 @@ Created on 2015年10月2日
 @email: 892768447@qq.com
 @description: 
 '''
-from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QPalette, QImage, QPixmap, QColor
-from PyQt5.QtWidgets import QWidget, QLabel, QSizePolicy
 
-from uilib.utils import SELF
+from __future__ import unicode_literals
+from uilib.utils import SELF, PY3
+
+if PY3():
+    from PyQt5.QtCore import Qt    # @UnresolvedImport @UnusedImport
+    from PyQt5.QtGui import QPalette, QImage, QPixmap, QColor    # @UnresolvedImport @UnusedImport
+    from PyQt5.QtWidgets import QWidget, QLabel, QSizePolicy    # @UnresolvedImport @UnusedImport
+else:
+    from PyQt4.QtGui import QPalette, QImage, QPixmap, QColor, QWidget, QLabel, QSizePolicy    # @Reimport @UnresolvedImport
+    from PyQt4.QtCore import Qt    # @Reimport @UnresolvedImport
 
 
 __Author__ = "By: Irony.\"[讽刺]\nQQ: 892768447\nEmail: 892768447@qq.com"
@@ -54,7 +60,8 @@ class BaseImageWidget(QWidget):
     """
 
     def __init__(self, parent = None, path = None):
-        super(BaseImageWidget, self).__init__(None)
+        super(BaseImageWidget, self).__init__(parent)
+        self.setObjectName("BaseImageWidget")
 
         # 图片label
         self._imageLabel = QLabel(self)

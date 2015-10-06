@@ -7,7 +7,13 @@ Created on 2015年10月1日
 @email: 892768447@qq.com
 @description: 
 '''
-from PyQt5.QtCore import QPropertyAnimation, QRect
+
+from uilib.utils import PY3
+
+if PY3():
+    from PyQt5.QtCore import QPropertyAnimation, QRect    # @UnresolvedImport @UnusedImport
+else:
+    from PyQt4.QtCore import QPropertyAnimation, QRect    # @Reimport
 
 __Author__ = "By: Irony.\"[讽刺]\nQQ: 892768447\nEmail: 892768447@qq.com"
 __Copyright__ = "Copyright (c) 2015 Irony.\"[讽刺]"
