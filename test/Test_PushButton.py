@@ -15,10 +15,10 @@ import sys
 sys.path.insert(0, dirname(dirname(abspath(sys.argv[0]))))
 sys.path.insert(0, dirname(dirname(abspath(__file__))))
 
-from uilib.utils import PY3, QT5
+from uilib.utils import QT5
 from uilib.widgets.PushButton import PushButton
 
-if PY3() and QT5():
+if QT5():
     from PyQt5.QtWidgets import QWidget, QApplication, QVBoxLayout    # @UnresolvedImport @UnusedImport
 else:
     from PyQt4.QtGui import QWidget, QVBoxLayout, QApplication    # @Reimport @UnresolvedImport

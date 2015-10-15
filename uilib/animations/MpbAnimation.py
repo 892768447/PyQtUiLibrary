@@ -87,7 +87,7 @@ class MpbAnimation(QSequentialAnimationGroup):
 
         # 并行动画组一
         # #透明度动画一
-        OpacityAnimation1 = QPropertyAnimation(target, b"windowOpacity")
+        OpacityAnimation1 = QPropertyAnimation(target, b"opacity")
         OpacityAnimation1.setDuration(400)
         OpacityAnimation1.setStartValue(0)
         OpacityAnimation1.setEndValue(1)
@@ -110,7 +110,7 @@ class MpbAnimation(QSequentialAnimationGroup):
 
         # 并行动画组二
         # #透明度动画二
-        OpacityAnimation2 = QPropertyAnimation(target, b"windowOpacity")
+        OpacityAnimation2 = QPropertyAnimation(target, b"opacity")
         OpacityAnimation2.setDuration(400)
         OpacityAnimation2.setStartValue(1)
         OpacityAnimation2.setEndValue(0)
