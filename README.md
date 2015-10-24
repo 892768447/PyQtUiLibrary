@@ -35,3 +35,6 @@
 
 ## GifWidget(Gif图片显示)-[Test_GifWidget.py](https://github.com/892768447/PyQtUiLibrary/blob/master/test/Test_GifWidget.py)
   </br><img src="https://github.com/892768447/PyQtUiLibrary/blob/master/screenshot/Test_GifWidget.gif" width="300" />
+  
+## NinePatchLabel(支持.9.png图片)-[Test_NinePatchLabel.py](https://github.com/892768447/PyQtUiLibrary/blob/master/test/Test_NinePatchLabel.py)
+  </br><img src="https://github.com/892768447/PyQtUiLibrary/blob/master/screenshot/Test_NinePatchLabel.gif" />

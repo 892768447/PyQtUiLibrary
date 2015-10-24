@@ -9,7 +9,7 @@ Created on 2015年10月5日
 '''
 from PyQt5.QtWidgets import QLineEdit
 
-from uilib.utils import QT5, SELF
+from uilib.Utils import QT5, SELF
 
 
 __Author__ = "By: Irony.\"[讽刺]\nQQ: 892768447\nEmail: 892768447@qq.com"

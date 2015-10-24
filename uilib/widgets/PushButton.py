@@ -8,7 +8,7 @@ Created on 2015年10月4日
 @description: 
 '''
 
-from uilib.utils import SELF, PY3
+from uilib.Utils import SELF, PY3
 
 
 if PY3():

@@ -9,7 +9,7 @@ Created on 2015年10月2日
 '''
 
 from __future__ import unicode_literals
-from uilib.utils import SELF, PY3
+from uilib.Utils import SELF, PY3
 
 if PY3():
     from PyQt5.QtCore import Qt    # @UnresolvedImport @UnusedImport

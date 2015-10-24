@@ -16,7 +16,7 @@ import sys
 sys.path.insert(0, dirname(dirname(abspath(sys.argv[0]))))
 sys.path.insert(0, dirname(dirname(abspath(__file__))))
 
-from uilib.utils import QT5
+from uilib.Utils import QT5
 from uilib.widgets.images.BaseImageWidget import BaseImageWidget
 from uilib.widgets.images.CircleImageWidget import CircleImageWidget
 from uilib.widgets.images.OverlayImageWidget import OverlayImageWidget

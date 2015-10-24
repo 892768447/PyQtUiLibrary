@@ -22,7 +22,7 @@ sys.path.insert(0, dirname(dirname(abspath(__file__))))
 from PyQt5.QtCore import QMetaObject, pyqtSlot
 from PyQt5.QtWidgets import QVBoxLayout, QPushButton, QFileDialog
 
-from uilib.utils import QT5
+from uilib.Utils import QT5
 from uilib.widgets.GifWidget import GifWidget
 
 if QT5():
