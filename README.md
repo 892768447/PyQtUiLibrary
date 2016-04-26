@@ -2,7 +2,7 @@
 ***不好意思由于某些原因导致进度很慢,以后会慢慢更新增加新的东西***
 <br/>
 较之前的版本，本次主要是取消qss文件，完全用模块实现。
-</br><a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=55bf02920e31f9f0d3a96696275fee830093e0ebc36d9e240b0babe02ae36d57"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="PyQt Ui" title="PyQt Ui"></a>
+</br><a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=2bb32624097216e9c0b9ef1b5fd8afeb63917d661a609786cf5638303caa0a8e"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="PyQt Ui" title="PyQt Ui"></a>
 
 ## ImageWidget(图片控件)-[Test_ImageWidget.py](https://github.com/892768447/PyQtUiLibrary/blob/master/test/Test_ImageWidget.py)
 - BaseImageWidget(方形图片控件)
