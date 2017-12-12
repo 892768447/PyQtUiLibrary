@@ -6,7 +6,7 @@ https://github.com/892768447/QMaterial
 <br/><br/><br/><br/><br/><br/>
 <br/>
 较之前的版本，本次主要是取消qss文件，完全用模块实现。
-</br><a target="_blank" href="http://shang.qq.com/wpa/qunwpa?idkey=2bb32624097216e9c0b9ef1b5fd8afeb63917d661a609786cf5638303caa0a8e"><img border="0" src="http://pub.idqqimg.com/wpa/images/group.png" alt="PyQt Ui" title="PyQt Ui"></a>
+
 
 ## ImageWidget(图片控件)-[Test_ImageWidget.py](https://github.com/892768447/PyQtUiLibrary/blob/master/test/Test_ImageWidget.py)
 - BaseImageWidget(方形图片控件)
